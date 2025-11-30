@@ -1,1 +1,14 @@
-
+@font-face {
+  font-family: 'GothicFrame';
+  src: url('./Pinyon_Script (1).zip') format('truetype');
+}
+        body {
+            background-image: url('./images/fondoo.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
