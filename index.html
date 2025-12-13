@@ -1,27 +1,86 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fallen Angel</title>
-</head>
-<style>
-    @font-face {
-  font-family: 'GothicFrame';
-  src: url('./Cookie-Regular.ttf') format('truetype');
-}
-        body {
-            background-image: url('./images/fondoo.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+       <link rel="icon" href="img/lazo.png">
+    <title>𝄞𝄢 Silent Paradise ‧˚꒰♬⋆.˚୭ ˚. ᵎᵎ</title>
+        <style>
+            @font-face {
+                font-family: 'GothicFrame';
+                src: url('ChopinScript.otf');
+            }
+
+       body {
+            background-image: url(./img/que.png);
             margin: 0;
             padding: 0;
-            min-height: 100vh;
+            overflow: hidden;
+            scroll-behavior: smooth;
         }
-</style>    
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            min-height: 100vh;
+            margin: 0 auto;
+            padding: 20px;
+            background: #dddbdd;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .cursor-follower {
+            width: 8px;
+            height: 8px;
+            background: #b6b2b4;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 9998;
+    }
+        h1 { 
+            font-family: 'Georgia', serif;
+            color: #afa9a9;
+            font-size: 2.5em;
+            text-align: center;
+            z-index: 10;
+        }
+
+    </style>
+</head>
 <body>
-    <h1 style="color: white; text-align: center; padding-top: 40px; font-family: 'GothicFrame';">Bienvenido</h1>
+        <div class="container">
+            <h1>SILENT PARADISE</h1>
+        </div>
+      <div class="cursor-follower" id="follower"></div>
+    <script>
+            const follower = document.getElementById('follower');
+
+             let mouseX = 0, mouseY = 0;
+             let followerX = 0, followerY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+      mouseY = e.clientY;
+      
+      cursor.style.left = mouseX + 'px';
+      cursor.style.top = mouseY + 'px';
+    });
+    function animate() {
+      followerX += (mouseX - followerX) * 0.1;
+      followerY += (mouseY - followerY) * 0.1;
+      
+      follower.style.left = followerX + 'px';
+      follower.style.top = followerY + 'px';
+      
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    </script>
+
 </body>
 </html>
